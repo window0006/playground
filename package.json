@@ -1,0 +1,30 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./scripts/run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/window0006/playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/window0006/playground/issues"
+  },
+  "homepage": "https://github.com/window0006/playground#readme",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "chalk": "^4.0.0",
+    "webpack": "^4.43.0"
+  }
+}
