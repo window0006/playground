@@ -1,5 +1,7 @@
 const env = process.env.NODE_ENV;
 
+console.log('env', env);
+
 const jsxRule = {
   test: /\.jsx?$/,
   loader: 'babel-loader',
@@ -39,10 +41,12 @@ const lessRule = {
     options: {
       modules: true
     }
+  }, {
+    loader: 'less-loader'
   }]
 };
 
-const fileRule = {
+const picRule = {
   test: /\.(png|jpg|gif)$/,
   use: [
     {
@@ -52,12 +56,24 @@ const fileRule = {
       },
     },
   ]
-}
+};
+
+const fontRule = {
+  test: /\.(woff|woff2|eot|ttf|otf)$/,
+  use: [
+    {
+      loader: 'file-loader',
+      options: {
+        name: '[name].[hash:8].[ext]',
+      },
+    },
+  ]
+};
 
 const config = {
   mode: env,
   module: {
-    rules: [ jsxRule, tsxRule, cssRule, lessRule, fileRule ],
+    rules: [ jsxRule, tsxRule, cssRule, lessRule, picRule, fontRule ],
   },
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ],
@@ -67,7 +83,7 @@ const config = {
 
 if (env === 'development') {
   const devConfig = {
-    mode: development,
+    mode: 'development',
     devtool: 'source-map',
     devServer: {
       port: 9999,

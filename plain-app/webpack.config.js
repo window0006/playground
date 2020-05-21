@@ -4,7 +4,7 @@ import path from 'path';
 
 const config = {
   entry: {
-    index: './src/index.ts',
+    background: './src/index.ts',
   },
   output: {
     path: __dirname + '/dist',

@@ -5,7 +5,7 @@ const chalk = require('chalk');
 
 const [a, b, cmd, projectName] = process.argv;
 
-const projectPath = path.join(__dirname, `../src/${projectName}`);
+const projectPath = path.join(__dirname, `../${projectName}`);
 
 if (!fs.existsSync(projectPath)) {
   console.log(
@@ -31,6 +31,7 @@ const promisifySpawn = (...args) => new Promise((resolve, reject) => {
 });
 
 ;(async () => {
+  console.log(projectPath);
   await promisifySpawn('npm', ['run', cmd], {
     cwd: projectPath,
   });

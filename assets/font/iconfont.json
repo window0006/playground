@@ -1,0 +1,170 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4674650",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "4868915",
+      "name": "people",
+      "font_class": "people",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "14799287",
+      "name": "通用-说明",
+      "font_class": "xwtubiaoku-01",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "14799338",
+      "name": "通用-定位",
+      "font_class": "xwtubiaoku-02",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "14799350",
+      "name": "通用-箭头右",
+      "font_class": "xwtubiaoku-03",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "14799464",
+      "name": "通用-箭头下",
+      "font_class": "xwtubiaoku-12",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "14799699",
+      "name": "通用-选择框",
+      "font_class": "xwtubiaoku-04",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "14799784",
+      "name": "通用-多选",
+      "font_class": "xwtubiaoku-05",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "14799791",
+      "name": "通用-单选",
+      "font_class": "xwtubiaoku-06",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14799841",
+      "name": "通用-关闭",
+      "font_class": "xwtubiaoku-07",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "14800128",
+      "name": "通用-删除/关闭",
+      "font_class": "xwtubiaoku-08",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "14800154",
+      "name": "通用-进度条-完成",
+      "font_class": "xwtubiaoku-09",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "14800170",
+      "name": "通用-进度条-进行中",
+      "font_class": "xwtubiaoku-10",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "14800243",
+      "name": "通用-进度条-等待",
+      "font_class": "xwtubiaoku-11",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "14802022",
+      "name": "xw-拍照",
+      "font_class": "xwtubiaoku-17",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "14802072",
+      "name": "xw-联系客服",
+      "font_class": "xwtubiaoku-18",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "14802147",
+      "name": "xw-银行卡管理",
+      "font_class": "xwtubiaoku-19",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "14802225",
+      "name": "xw-身份证",
+      "font_class": "xwtubiaoku-20",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "14802605",
+      "name": "xw-优惠券",
+      "font_class": "xwtubiaoku-21",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "14802763",
+      "name": "xw-结果页-成功",
+      "font_class": "xwtubiaoku-13",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "14802803",
+      "name": "xw-结果页-警示",
+      "font_class": "xwtubiaoku-14",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "14802822",
+      "name": "xw-结果页-失败",
+      "font_class": "xwtubiaoku-15",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "14802854",
+      "name": "xw-结果页-等待",
+      "font_class": "xwtubiaoku-16",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    }
+  ]
+}
