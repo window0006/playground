@@ -1,7 +1,5 @@
 const env = process.env.NODE_ENV;
 
-console.log('env', env);
-
 const jsxRule = {
   test: /\.jsx?$/,
   loader: 'babel-loader',
@@ -72,6 +70,7 @@ const config = {
   module: {
     rules: [ jsxRule, tsxRule, cssRule, lessRule, picRule, fontRule ],
   },
+  // 设置模块如何被解析
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
@@ -80,13 +79,8 @@ const config = {
 
 if (env === 'development') {
   const devConfig = {
-    mode: 'development',
     devtool: 'source-map',
-    devServer: {
-      port: 9999,
-      compress: true, // gzip
-      writeToDisk: true
-    }
+    devServer: require('./webpack.server.config')
   };
   Object.assign(config, devConfig);
 }

@@ -18,7 +18,7 @@ const promisifySpawn = (...args) => new Promise((resolve, reject) => {
   const sh = spawn(...args);
 
   sh.stdout.on('data', data => {
-    console.log('sh.stdout：', data.toString());
+    console.log(data.toString());
   });
 
   sh.on('error', err => {
@@ -31,7 +31,6 @@ const promisifySpawn = (...args) => new Promise((resolve, reject) => {
 });
 
 ;(async () => {
-  console.log(projectPath);
   await promisifySpawn('npm', ['run', cmd], {
     cwd: projectPath,
   });
