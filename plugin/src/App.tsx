@@ -7,7 +7,9 @@ import routes, { RouteWithSubRoutes } from './routes';
 function App() {
   return (
     <BrowserRouter>
-      <RouteWithSubRoutes routes={routes} />
+      <RouteWithSubRoutes
+        routes={routes}
+      />
     </BrowserRouter>
   );
 }
