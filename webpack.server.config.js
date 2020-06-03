@@ -1,6 +1,7 @@
 module.exports = {
   https: false,
   contentBase: './dist',
+  publicPath: 'http://localhost:9999',
   hot: true, // 热重载
   hotOnly:true,  // 修改hot为支持热更新
   port: 9999,

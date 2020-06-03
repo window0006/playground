@@ -1,9 +1,11 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+
+import './home.less';
 
 export default (props) => {
   return (
     <div className="wrapper">
+      home
       {
         props.children
       }

@@ -21,7 +21,8 @@ module.exports = {
   },
   output: {
     path: distDir,
-    filename: '[name]-[hash:8].js'
+    filename: '[name]-[hash:8].js',
+    publicPath: 'http://localhost:9999/'
   },
   plugins: [
     ...baseConfig.plugins,

@@ -31,7 +31,7 @@ const cssRule = {
 };
 
 const lessRule = {
-  test: /\.css$/,
+  test: /\.less$/,
   use: [{
     loader: 'style-loader'
   }, {
