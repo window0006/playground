@@ -18,12 +18,7 @@
     "url": "https://github.com/window0006/playground/issues"
   },
   "homepage": "https://github.com/window0006/playground#readme",
-  "dependencies": {
-    "@hot-loader/react-dom": "^16.13.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/plugin-transform-runtime": "^7.9.6",
