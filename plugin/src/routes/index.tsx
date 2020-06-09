@@ -2,8 +2,9 @@ import React from 'react';
 import { RouteProps, RouteComponentProps } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 
-import Clock from '../pages/Clock';
 import Home from '../pages/Home';
+import Clock from '../pages/Clock';
+
 import Fallback from '../pages/Fallback';
 import NotFound from '../pages/NotFound';
 
@@ -54,17 +55,12 @@ const routes: IRouteItem[] =  [
   {
     path: '/',
     component: Home,
+    shouldNotFallBack: true,
     routes: [
       {
         path: '/clock',
         component: Clock,
-        shouldNotFallBack: true,
-        routes: [
-          {
-            path: '/clock/test',
-            component: () => <div>test</div>
-          }
-        ],
+        shouldNotFallBack: true
       }, {
         path: '/404',
         component: NotFound

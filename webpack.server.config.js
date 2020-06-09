@@ -7,7 +7,7 @@ module.exports = {
   port: 9999,
   compress: true, // gzip
   writeToDisk: true,
-  overlay: false, // 当出现编译器错误或警告时，在浏览器中显示全屏覆盖层
+  overlay: true, // 当出现编译器错误或警告时，在浏览器中显示全屏覆盖层
   noInfo: false, // 隐藏 webpack bundle 信息之类的消息
   open: false, // 在 server 启动后打开浏览器
   historyApiFallback: true, // 不存在path将fallback到/

@@ -17,4 +17,5 @@ export default class Plugin {
     
     eventObject.addListener(callback);
   }
+
 }

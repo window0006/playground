@@ -2,14 +2,14 @@
   "compilerOptions": {
     "lib": ["es5", "es6", "es7", "dom"],
     "moduleResolution": "node",
-    "module": "es6",
+    "module": "esnext",
+    "importHelpers": true,
     "target": "es5",
-    "outDir": "./lib",
     "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "./typings",
       "./node_modules/@types"
     ],
-    "jsx": "react"
+    "jsx": "preserve"
   }
 }

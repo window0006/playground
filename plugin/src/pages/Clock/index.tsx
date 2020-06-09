@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
+import Loading from 'src/components/Loading';
+import ErrorBoundary from 'src/components/ErrorBoundary';
 
-export default (props) => {
+const Component = lazy(
+  () => import(/* webpackChunkName: 'Clock' */ './Clock')
+);
+
+export default () => {
   return (
-    <div className="clock">
-      clock
-      {
-        props.children
-      }
-    </div>
+    <ErrorBoundary>
+      <Suspense fallback={<Loading/>}>
+        <Component />
+      </Suspense>
+    </ErrorBoundary>
   );
 }

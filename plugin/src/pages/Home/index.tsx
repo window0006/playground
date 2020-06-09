@@ -1,14 +1,17 @@
 import React from 'react';
 
+import Layout from 'src/components/Layout';
 import './home.less';
 
-export default (props) => {
+const Home: React.FunctionComponent = (props) => {
+  console.log(2)
   return (
-    <div className="wrapper">
-      home
+    <Layout>
       {
         props.children
       }
-    </div>
+    </Layout>
   );
 }
+
+export default Home;
