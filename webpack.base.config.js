@@ -58,7 +58,7 @@ const lessRule = {
     loader: 'less-loader',
     options: {
       lessOptions: {
-        javascriptEnabled: true,
+        javascriptEnabled: true, // antd需要，另外需要通过babel-import-plugin做按需组件加载
       },
     },
   }]
@@ -95,7 +95,7 @@ const config = {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   plugins: [
-    // ts-loader不再做类型检查了，使用这个插件，在单独的进程中与tslint一起做运行，做类型检查
+    // ts-loader不再做类型检查了，使用这个插件，在单独的进程中与使用tslint的结果做类型检查
     new ForkTsCheckerWebpackPlugin()
   ]
 };

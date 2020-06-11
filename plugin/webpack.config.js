@@ -49,6 +49,8 @@ module.exports = {
     runtimeChunk: {
       name: 'webpack.runtime'
     },
+    // 拆分bundle，不变更的react全家桶单独打包，做强缓存
+    // antd没必要拆，但是其内部依赖很多，依旧容易体积膨胀
     splitChunks: {
       minSize: 30000,
       maxSize: 0,
