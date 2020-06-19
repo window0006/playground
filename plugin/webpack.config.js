@@ -17,6 +17,7 @@ module.exports = {
     path: distDir,
     filename: '[name]-[hash:8].js',
     chunkFilename: '[name]-[hash:8].js',
+    // todo online domain
     publicPath: 'http://localhost:9999/'
   },
   externals: {
@@ -50,7 +51,7 @@ module.exports = {
       name: 'webpack.runtime'
     },
     // 拆分bundle，不变更的react全家桶单独打包，做强缓存
-    // antd没必要拆，但是其内部依赖很多，依旧容易体积膨胀
+    // antd没必要拆，按需引入即可，但是其内部依赖很多，依旧容易体积膨胀
     splitChunks: {
       minSize: 30000,
       maxSize: 0,

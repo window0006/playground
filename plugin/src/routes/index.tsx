@@ -8,13 +8,18 @@ import Clock from '../pages/Clock';
 import Fallback from '../pages/Fallback';
 import NotFound from '../pages/NotFound';
 
-export interface IRouteItem extends RouteProps, IRouteWithSubRoutesProps {}
+export interface IRouteItem extends RouteProps, IRouteWithSubRoutesProps {
+  name?: string;
+}
 
 const renderNestingRouteComponent = (route: IRouteItem): RouteProps['render'] => (props: RouteComponentProps<any>) => {
   const Component = route.component;
   return (
     <Component {...props}>
-      <RouteWithSubRoutes routes={route.routes} shouldNotFallBack={route.shouldNotFallBack} />
+      <RouteWithSubRoutes
+        routes={route.routes}
+        shouldNotFallBack={route.shouldNotFallBack}
+      />
     </Component>
   );
 }
@@ -51,16 +56,16 @@ export const RouteWithSubRoutes: React.FunctionComponent<IRouteWithSubRoutesProp
   );
 }
 
-const routes: IRouteItem[] =  [
+const routes: IRouteItem[] = [
   {
     path: '/',
     component: Home,
-    shouldNotFallBack: true,
     routes: [
       {
+        exact: true,
         path: '/clock',
-        component: Clock,
-        shouldNotFallBack: true
+        name: '时钟',
+        component: Clock
       }, {
         path: '/404',
         component: NotFound
