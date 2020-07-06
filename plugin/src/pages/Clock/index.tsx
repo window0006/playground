@@ -12,6 +12,6 @@ export default () => {
       <Suspense fallback={<Loading/>}>
         <Component />
       </Suspense>
-    </ErrorBoundary>
+    </ErrorBoundary>standard
   );
 }
