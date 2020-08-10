@@ -1,4 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, MouseEventHandler, TouchEventHandler } from 'react';
+
+interface IPoint {
+  x: number;
+  y: number;
+}
 
 export default () => {
   let isDraging = false;
@@ -12,8 +17,8 @@ export default () => {
     y: 0
   };
 
-  const onDragStart = (e: React.TouchEvent) => {
-    const { pageX, pageY } = e.touches[0];
+  const onDragStart: MouseEventHandler = e => {
+    const { pageX, pageY } = e;
 
     isDraging = true;
     distance.x = 0;
@@ -21,11 +26,9 @@ export default () => {
 
     startAt.x = pageX;
     startAt.y = pageY;
-
-    const getPosition();
   }
 
-  const onDragEnd = (e: React.TouchEvent) => {
+  const onDragEnd: MouseEventHandler = () => {
     isDraging = false;
     distance.x = 0;
     distance.y = 0;
@@ -33,11 +36,11 @@ export default () => {
     startAt.y = 0;
   }
 
-  const onDragMove = (e: React.TouchEvent) => {
+  const onDragMove: MouseEventHandler = (e) => {
     if (!isDraging) {
       return;
     }
-    const { pageX, pageY } = e.touches[0];
+    const { pageX, pageY } = e;
 
     // 获取拖动的距离
     distance.x = pageX - startAt.x;
@@ -47,8 +50,9 @@ export default () => {
 
   }
 
-
-  return [
-
-  ];
+  return {
+    onDragStart,
+    onDragEnd,
+    onDragMove,
+  };
 }

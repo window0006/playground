@@ -1,4 +1,5 @@
 import React, { useState, Children } from 'react';
+import useDrag from 'src/hooks/useDrag';
 
 export interface IPoint {
   x?: number;
@@ -10,19 +11,19 @@ const Dragable: React.FunctionComponent = (props) => {
     children
   } = props;
 
-  const [
-    onDrageStart,
-    onDrageMove,
-    onDrageEnd
-  ] = useDrage();
+  const {
+    onDragStart,
+    onDragMove,
+    onDragEnd
+  } = useDrag();
 
   return (
     <div
-      className="drage-wrapper"
-      onMouseDown={onDrageStart}
-      onMouseMove={onDrageEnd}
-      onMouseUp={onDrageMove}
-      onMouseLeave={onDrageEnd}
+      className="drag-wrapper"
+      onMouseDown={onDragStart}
+      onMouseMove={onDragEnd}
+      onMouseUp={onDragMove}
+      onMouseLeave={onDragEnd}
     >
       {
         Children.only(children)
