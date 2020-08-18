@@ -1,11 +1,16 @@
-import { useEffect, useState, MouseEventHandler, TouchEventHandler } from 'react';
+import { useEffect, useState } from 'react';
 
 interface IPoint {
   x: number;
   y: number;
 }
 
-export default () => {
+export default ($element: HTMLElement) => {
+  const offsetInfo = $element.getBoundingClientRect();
+  $element.style.position = 'absolute';
+  $element.style.left = `${offsetInfo.left}px`;
+  $element.style.top = `${offsetInfo.top}px`;
+
   let isDraging = false;
   const distance = {
     x: 0,
@@ -17,7 +22,12 @@ export default () => {
     y: 0
   };
 
-  const onDragStart: MouseEventHandler = e => {
+  const elementBasePosition: IPoint = {
+    x: 0,
+    y: 0,
+  };
+
+  const onDragStart = (e: MouseEvent) => {
     const { pageX, pageY } = e;
 
     isDraging = true;
@@ -26,17 +36,25 @@ export default () => {
 
     startAt.x = pageX;
     startAt.y = pageY;
+
+    const offsetInfo = $element.getBoundingClientRect();
+    elementBasePosition.x = offsetInfo.left;
+    elementBasePosition.y = offsetInfo.top;
+
+    e.preventDefault();
   }
 
-  const onDragEnd: MouseEventHandler = () => {
+  const onDragEnd = (e: MouseEvent) => {
     isDraging = false;
     distance.x = 0;
     distance.y = 0;
     startAt.x = 0;
     startAt.y = 0;
+
+    e.preventDefault();
   }
 
-  const onDragMove: MouseEventHandler = (e) => {
+  const onDragMove = (e: MouseEvent) => {
     if (!isDraging) {
       return;
     }
@@ -46,8 +64,10 @@ export default () => {
     distance.x = pageX - startAt.x;
     distance.y = pageY - startAt.y;
 
-    // 计算当前的位置
-
+    $element.style.left = `${elementBasePosition.x + distance.x}px`;
+    $element.style.top = `${elementBasePosition.y + distance.y}px`;
+    
+    e.preventDefault();
   }
 
   return {

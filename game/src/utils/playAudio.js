@@ -1,4 +1,4 @@
-import ap from '@alipay/alipayjsapi/lib/alipayjsapi.inc';
+// import ap from '@alipay/alipayjsapi/lib/alipayjsapi.inc';
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
@@ -39,14 +39,14 @@ export default function playAudio(src) {
     return () => {};
   }
 
-  if (!window.AudioContext) {
-    return () => {
-      ap.playBackgroundAudio({
-        src
-      });
-      ap.seekBackgroundAudio(0);
-    };
-  }
+  // if (!window.AudioContext) {
+  //   return () => {
+  //     ap.playBackgroundAudio({
+  //       src
+  //     });
+  //     ap.seekBackgroundAudio(0);
+  //   };
+  // }
 
   const bufferPromise = getBuffer(src);
 

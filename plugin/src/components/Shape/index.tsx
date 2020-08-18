@@ -1,4 +1,4 @@
-import React, { useState, Children } from 'react';
+import React, { useRef, Children, useEffect } from 'react';
 import useDrag from 'src/hooks/useDrag';
 
 export interface IPoint {
@@ -6,24 +6,40 @@ export interface IPoint {
   y?: number;
 }
 
-const Dragable: React.FunctionComponent = (props) => {
-  const {
-    children
-  } = props;
+export const Dragable: React.FunctionComponent = (props) => {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const { children } = props;
 
-  const {
-    onDragStart,
-    onDragMove,
-    onDragEnd
-  } = useDrag();
+  useEffect(() => {
+    const $element = elementRef.current;
+    const $container = document.body;
+    if (!$element) {
+      return;
+    }
+    const {
+      onDragStart,
+      onDragMove,
+      onDragEnd
+    } = useDrag($element);
+
+    $element.style.cursor = 'move';
+    $element.addEventListener('mousedown', onDragStart);
+    $container.addEventListener('mousemove', onDragMove);
+    $container.addEventListener('mouseup', onDragEnd);
+    $container.addEventListener('mouseleave', onDragEnd);
+
+    return () => {
+      $element.removeEventListener('mousedown', onDragStart);
+      $container.removeEventListener('mousemove', onDragMove);
+      $container.removeEventListener('mouseup', onDragEnd);
+      $container.removeEventListener('mouseleave', onDragEnd);
+    };
+  });
 
   return (
     <div
+      ref={elementRef}
       className="drag-wrapper"
-      onMouseDown={onDragStart}
-      onMouseMove={onDragEnd}
-      onMouseUp={onDragMove}
-      onMouseLeave={onDragEnd}
     >
       {
         Children.only(children)
