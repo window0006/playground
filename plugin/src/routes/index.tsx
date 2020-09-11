@@ -67,6 +67,16 @@ const routes: IRouteItem[] = [
         name: '时钟',
         component: Clock
       }, {
+        exact: true,
+        path: '/clock2',
+        name: '时钟',
+        component: Clock
+      }, {
+        exact: true,
+        path: '/clock3',
+        name: '时钟',
+        component: Clock
+      }, {
         path: '/404',
         component: NotFound
       }

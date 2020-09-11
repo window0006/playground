@@ -27,6 +27,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@types/chrome": "^0.0.114",
     "@types/loadable__component": "^5.10.0",
+    "acorn": "^8.0.1",
     "babel": "^6.23.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-import": "^1.13.0",
